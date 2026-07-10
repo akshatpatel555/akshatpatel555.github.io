@@ -1,0 +1,395 @@
+/* ─── PROJECTS PAGE & CASE STUDIES ─────────────────────────── */
+
+.page-hero {
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+}
+
+.page-hero .section-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+/* Filter tabs */
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.filter-tab {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-tab:hover {
+  border-color: var(--border2);
+  color: var(--text);
+}
+
+.filter-tab.active {
+  background: rgba(124,106,247,0.12);
+  border-color: rgba(124,106,247,0.45);
+  color: var(--accent);
+}
+
+/* Showcase cards (Andrew-style layered layout) */
+.showcase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.showcase-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.showcase-card:hover {
+  border-color: rgba(124,106,247,0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.showcase-card.hidden { display: none; }
+
+.showcase-visual {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 55%);
+}
+
+.showcase-visual .visual-icon {
+  font-size: 3.5rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+}
+
+.showcase-visual.stitching { background: linear-gradient(145deg, #2d1f4e, #7c6af7 55%, #5ee7b7); }
+.showcase-visual.trainer   { background: linear-gradient(145deg, #1a2a4a, #4a7cf7 55%, #5ee7b7); }
+.showcase-visual.graphics  { background: linear-gradient(145deg, #0f1a2e, #3d5a80 55%, #7c6af7); }
+.showcase-visual.monte     { background: linear-gradient(145deg, #1a1a2e, #5c4d7a 55%, #f77c6a); }
+.showcase-visual.database  { background: linear-gradient(145deg, #14261f, #2d6a4f 55%, #5ee7b7); }
+.showcase-visual.scanner   { background: linear-gradient(145deg, #1f1a14, #8b5a2b 55%, #f77c6a); }
+.showcase-visual.rot13     { background: linear-gradient(145deg, #1a1426, #6b4c9a 55%, #7c6af7); }
+
+.showcase-body {
+  padding: 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proj-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 5px;
+  font-family: var(--mono);
+}
+
+.proj-tag.purple { background: rgba(124,106,247,0.14); color: #a99bf9; border: 1px solid rgba(124,106,247,0.25); }
+.proj-tag.green  { background: rgba(94,231,183,0.1); color: #5ee7b7; border: 1px solid rgba(94,231,183,0.22); }
+.proj-tag.orange { background: rgba(247,124,106,0.1); color: #f77c6a; border: 1px solid rgba(247,124,106,0.22); }
+.proj-tag.blue   { background: rgba(106,169,247,0.1); color: #6aa9f7; border: 1px solid rgba(106,169,247,0.22); }
+.proj-tag.gray   { background: rgba(120,120,160,0.1); color: var(--muted); border: 1px solid rgba(120,120,160,0.22); }
+.proj-tag.confidential { background: rgba(247,196,106,0.1); color: #f7c46a; border: 1px solid rgba(247,196,106,0.25); }
+
+.showcase-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.showcase-tagline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.showcase-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.showcase-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.showcase-date {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+.case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.case-study-link:hover {
+  color: var(--accent2);
+  gap: 0.55rem;
+}
+
+.case-study-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+/* Home page selected projects preview */
+.selected-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.preview-card {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.22s, transform 0.22s;
+}
+
+.preview-card:hover {
+  border-color: rgba(124,106,247,0.45);
+  transform: translateX(4px);
+}
+
+.preview-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.preview-icon.stitching { background: linear-gradient(135deg, #2d1f4e, #7c6af7); }
+.preview-icon.trainer   { background: linear-gradient(135deg, #1a2a4a, #4a7cf7); }
+.preview-icon.graphics  { background: linear-gradient(135deg, #0f1a2e, #3d5a80); }
+
+.preview-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.preview-content p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.preview-arrow {
+  color: var(--muted);
+  font-size: 1.1rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.preview-card:hover .preview-arrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+.view-all-row {
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+/* Case study pages */
+.case-study-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.back-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.confidential-banner {
+  background: rgba(247,196,106,0.08);
+  border: 1px solid rgba(247,196,106,0.22);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.confidential-banner h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f7c46a;
+  font-family: var(--mono);
+  margin-bottom: 0.4rem;
+}
+
+.confidential-banner p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.case-hero {
+  margin-bottom: 2.5rem;
+}
+
+.case-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  margin-bottom: 0.75rem;
+}
+
+.case-hero .lead {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.case-section {
+  margin-bottom: 2.5rem;
+}
+
+.case-section h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.3px;
+}
+
+.case-section p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 0.85rem;
+}
+
+.case-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.case-section li {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.case-section li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.case-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 760px) {
+  .showcase-card {
+    grid-template-columns: 1fr;
+  }
+  .showcase-visual {
+    min-height: 140px;
+  }
+  .preview-card {
+    grid-template-columns: 56px 1fr;
+  }
+  .preview-arrow { display: none; }
+}

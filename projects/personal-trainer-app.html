@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Trainer App — Case Study | Akshat Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../projects.html" onclick="closeMobile()">Projects</a>
+  <a href="../index.html#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<main class="case-study-page">
+  <a href="../projects.html" class="back-link"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to projects</a>
+  <div class="showcase-tags" style="margin-bottom:1.25rem;">
+    <span class="proj-tag purple">Full-Stack</span>
+    <span class="proj-tag green">Mobile</span>
+  </div>
+  <header class="case-hero">
+    <h1>Personal Trainer App</h1>
+    <p class="lead">Senior capstone full-stack mobile fitness platform — Flutter front-end, FastAPI backend, MongoDB storage, and multi-factor authentication.</p>
+  </header>
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>Personal trainers need a way to manage client workouts, track training sessions, and authenticate users securely across mobile devices — without relying on paper logs or generic fitness apps that don't fit trainer-specific workflows.</p>
+  </section>
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>Built as part of the Byte Squad capstone team (CS 46x), the app pairs a Flutter mobile client with a FastAPI REST API and MongoDB. I led backend architecture: JWT-based auth, PyOTP two-factor authentication, QR code login flows, and REST endpoints for workout and session management. Coordinated Flutter integration across the team.</p>
+  </section>
+  <section class="case-section">
+    <h2>Key Engineering</h2>
+    <ul>
+      <li>FastAPI backend with Pydantic validation and structured error responses</li>
+      <li>JWT access tokens with OTP second factor and QR-based session pairing</li>
+      <li>MongoDB document storage for flexible workout and user schemas</li>
+      <li>Cross-team API contract design for Flutter front-end integration</li>
+      <li>Agile sprints with code review and iterative delivery across two semesters</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <div class="case-stack">
+      <span class="stack-tag">Flutter</span><span class="stack-tag">Dart</span><span class="stack-tag">FastAPI</span>
+      <span class="stack-tag">Python</span><span class="stack-tag">MongoDB</span><span class="stack-tag">JWT</span>
+      <span class="stack-tag">PyOTP</span><span class="stack-tag">QRCode</span>
+    </div>
+  </section>
+</main>
+<footer><p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p><p class="footer-text" id="footer-year"></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

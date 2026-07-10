@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stitching Client Manager — Case Study | Akshat Patel</title>
+  <meta name="description" content="Case study: tablet-first Flutter app for managing stitching and alteration client orders." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="../index.html#about"      onclick="closeMobile()">About</a>
+  <a href="../index.html#skills"     onclick="closeMobile()">Skills</a>
+  <a href="../projects.html"         onclick="closeMobile()">Projects</a>
+  <a href="../index.html#experience" onclick="closeMobile()">Experience</a>
+  <a href="../index.html#education"  onclick="closeMobile()">Education</a>
+  <a href="../index.html#contact"    onclick="closeMobile()">Contact</a>
+  <a href="../resume.pdf" target="_blank" rel="noopener" onclick="closeMobile()" class="mob-resume">Resume</a>
+</div>
+
+<main class="case-study-page">
+  <a href="../projects.html" class="back-link">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to projects
+  </a>
+
+  <div class="confidential-banner">
+    <h3>Confidentiality Note</h3>
+    <p>Code is private — this is a personal app built for a family business. This case study covers architecture, data model, and engineering decisions — not implementation details. Happy to walk through the app live.</p>
+  </div>
+
+  <div class="showcase-tags" style="margin-bottom:1.25rem;">
+    <span class="proj-tag purple">Full-Stack</span>
+    <span class="proj-tag green">Mobile</span>
+    <span class="proj-tag confidential">Confidential</span>
+  </div>
+
+  <header class="case-hero">
+    <h1>Stitching Client Manager</h1>
+    <p class="lead">A tablet-first Flutter app that replaces a paper notebook with searchable customer records, structured work orders, stylus handwriting, and per-order payment tracking for a custom tailoring business.</p>
+  </header>
+
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>My mom runs a stitching and alteration side business — designing and altering Indian dresses, blouses, lehengas, and more for clients. She tracked everything in a paper notebook: customer names, what work needed to be done, measurements, due dates, and whether orders were paid. There was no way to search for a customer, no structured way to specify garment types or work types (alteration, new borders, custom design), and no reliable tracking of completion or payment status across multiple concurrent orders.</p>
+  </section>
+
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>I built a tablet-first Android app designed around how she actually works. Each customer has a profile with contact info and reusable measurement sets per garment type. Orders capture garment type, multiple work tags, typed notes, S Pen handwriting, photos (fabric, design references, finished pieces), due dates, and payment status — deposits, partial payments, and paid-in-full tracking. A dashboard with search and filters (unpaid, overdue, in progress, due this week) gives her an at-a-glance view of what needs attention.</p>
+  </section>
+
+  <section class="case-section">
+    <h2>Architecture</h2>
+    <ul>
+      <li>Flutter UI with Provider for dependency injection and a repository pattern separating data access from screens</li>
+      <li>Drift ORM over local SQLite — reactive streams power live-updating lists as orders change</li>
+      <li>Normalized schema: customers, orders, garment/work tags, measurements, handwriting strokes, and categorized photos with cascade deletes</li>
+      <li>Configurable tag system — default garment types (blouse, lehenga, kurti) and work types (alteration, embroidery, hemming) with custom additions</li>
+      <li>Scribble-based handwriting canvas with serialized stroke data and fullscreen editing mode for stylus input</li>
+      <li>Speech-to-text integration for hands-free note dictation while measuring or fitting</li>
+      <li>Structured for future iPad port and optional cloud sync without schema changes</li>
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2>Design Tradeoffs</h2>
+    <ul>
+      <li>Local-first vs. cloud — chose SQLite on-device so the app works offline with zero setup and no subscription costs for a small business. Cloud sync is architected as a future layer, not a v1 requirement.</li>
+      <li>Tablet-first vs. phone — optimized layouts for Samsung tablet + S Pen workflow rather than a one-size-fits-all responsive design, since that's the primary use case.</li>
+      <li>Flexible tags vs. rigid forms — configurable garment and work tags let her describe orders in her own vocabulary instead of forcing predefined dropdowns that don't match how Indian tailoring work is described.</li>
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2>Results</h2>
+    <ul>
+      <li>v1.3 deployed and in daily use — customer lookup, order creation, and payment tracking fully replaced the paper notebook</li>
+      <li>Dashboard filters surface overdue and unpaid orders immediately instead of flipping through pages</li>
+      <li>Reusable customer measurement sets eliminate re-entering measurements for repeat clients</li>
+      <li>Unit tests cover core business logic (balance due, overdue detection, payment status)</li>
+    </ul>
+  </section>
+
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <div class="case-stack">
+      <span class="stack-tag">Flutter</span>
+      <span class="stack-tag">Dart</span>
+      <span class="stack-tag">Drift</span>
+      <span class="stack-tag">SQLite</span>
+      <span class="stack-tag">Provider</span>
+      <span class="stack-tag">Scribble</span>
+      <span class="stack-tag">Speech-to-Text</span>
+      <span class="stack-tag">Image Picker</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p>
+  <p class="footer-text" id="footer-year"></p>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

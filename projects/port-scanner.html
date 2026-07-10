@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concurrent Port Scanner — Case Study | Akshat Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links"><li><a href="../projects.html" class="active">Projects</a></li></ul>
+    <a href="../resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+  </div>
+</nav>
+<main class="case-study-page">
+  <a href="../projects.html" class="back-link"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to projects</a>
+  <div class="showcase-tags" style="margin-bottom:1.25rem;"><span class="proj-tag orange">Systems</span></div>
+  <header class="case-hero">
+    <h1>Concurrent Port Scanner</h1>
+    <p class="lead">Multi-threaded C++ port scanner comparing thread-based and async I/O concurrency models for network throughput.</p>
+  </header>
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>Scanning many ports on a host is I/O-bound — sequential connections are slow. Parallelism can dramatically improve throughput, but the concurrency model matters for resource usage and scalability.</p>
+  </section>
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>Built a port scanner in C++ using parallel socket connections via OpenMP threads. Compared thread-based concurrency against async I/O approaches and measured throughput gains across different port ranges and host configurations.</p>
+  </section>
+  <section class="case-section">
+    <h2>Key Engineering</h2>
+    <ul>
+      <li>Parallel TCP socket connections with configurable thread pool</li>
+      <li>Timeout handling for unresponsive ports</li>
+      <li>Throughput benchmarking: threads vs. sequential baseline</li>
+      <li>Comparison of thread-based vs. async I/O concurrency patterns</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <div class="case-stack">
+      <span class="stack-tag">C++</span><span class="stack-tag">Sockets</span><span class="stack-tag">OpenMP</span><span class="stack-tag">Networking</span>
+    </div>
+  </section>
+</main>
+<footer><p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p><p class="footer-text" id="footer-year"></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

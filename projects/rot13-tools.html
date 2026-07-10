@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROT13 Cipher &amp; Protocol Tools — Case Study | Akshat Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links"><li><a href="../projects.html" class="active">Projects</a></li></ul>
+    <a href="../resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+  </div>
+</nav>
+<main class="case-study-page">
+  <a href="../projects.html" class="back-link"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to projects</a>
+  <div class="showcase-tags" style="margin-bottom:1.25rem;">
+    <span class="proj-tag orange">Systems</span><span class="proj-tag green">Web</span>
+  </div>
+  <header class="case-hero">
+    <h1>ROT13 Cipher &amp; Protocol Tools</h1>
+    <p class="lead">TDD-driven ROT13 encoder/decoder with full Jest test coverage and client–server socket programming exploration.</p>
+  </header>
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>Network protocol implementations need rigorous testing and a clear understanding of encoding/decoding pipelines and socket communication patterns.</p>
+  </section>
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>CS 372 networking coursework — built a ROT13 cipher encoder/decoder using test-driven development with comprehensive Jest test suites. Extended into client–server socket programming to explore how encoded messages flow across network boundaries.</p>
+  </section>
+  <section class="case-section">
+    <h2>Key Engineering</h2>
+    <ul>
+      <li>Test-driven development — tests written before implementation</li>
+      <li>Full Jest coverage for edge cases (empty strings, non-alpha chars, round-trip)</li>
+      <li>Client–server socket communication with encoded message passing</li>
+      <li>Node.js networking module usage for TCP connections</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <div class="case-stack">
+      <span class="stack-tag">JavaScript</span><span class="stack-tag">Node.js</span><span class="stack-tag">Jest</span><span class="stack-tag">TDD</span><span class="stack-tag">Sockets</span>
+    </div>
+  </section>
+</main>
+<footer><p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p><p class="footer-text" id="footer-year"></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

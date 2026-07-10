@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Akshat Patel</title>
+  <meta name="description" content="Selected projects by Akshat Patel — full-stack apps, systems programming, and computer graphics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#about"      onclick="closeMobile()">About</a>
+  <a href="index.html#skills"     onclick="closeMobile()">Skills</a>
+  <a href="projects.html"         onclick="closeMobile()">Projects</a>
+  <a href="index.html#experience" onclick="closeMobile()">Experience</a>
+  <a href="index.html#education"  onclick="closeMobile()">Education</a>
+  <a href="index.html#contact"    onclick="closeMobile()">Contact</a>
+  <a href="resume.pdf" target="_blank" rel="noopener" onclick="closeMobile()" class="mob-resume">Resume</a>
+</div>
+
+<section class="page-hero">
+  <p class="section-label">Projects</p>
+  <h2>What I've Built</h2>
+  <p class="section-subtitle">End-to-end systems — designed, built, shipped, and maintained.</p>
+
+  <div class="filter-tabs" id="filter-tabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="full-stack">Full-Stack</button>
+    <button class="filter-tab" data-filter="mobile">Mobile</button>
+    <button class="filter-tab" data-filter="graphics">Graphics</button>
+    <button class="filter-tab" data-filter="systems">Systems</button>
+    <button class="filter-tab" data-filter="web">Web</button>
+  </div>
+
+  <div class="showcase-list fade-up" id="showcase-list">
+
+    <!-- Stitching Client Manager -->
+    <article class="showcase-card" data-categories="full-stack mobile">
+      <div class="showcase-visual stitching">
+        <span class="visual-icon">🧵</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag purple">Full-Stack</span>
+          <span class="proj-tag green">Mobile</span>
+          <span class="proj-tag confidential">Confidential</span>
+        </div>
+        <h3 class="showcase-title">Stitching Client Manager</h3>
+        <p class="showcase-tagline">Tablet-first order management for a custom tailoring business — searchable customers, structured work orders, and payment tracking</p>
+        <p class="showcase-desc">
+          Built a Flutter app for my mom's stitching and alteration side business to replace her paper notebook.
+          Each customer can have multiple active orders with garment types, work tags, measurements, stylus handwriting,
+          photos, due dates, and per-order payment status — all stored locally in SQLite with reactive Drift queries.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">Jul 2025 – Present</span>
+          <a href="projects/stitching-client-manager.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Personal Trainer App -->
+    <article class="showcase-card" data-categories="full-stack mobile">
+      <div class="showcase-visual trainer">
+        <span class="visual-icon">💪</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag purple">Full-Stack</span>
+          <span class="proj-tag green">Mobile</span>
+        </div>
+        <h3 class="showcase-title">Personal Trainer App</h3>
+        <p class="showcase-tagline">Full-stack mobile fitness platform with JWT auth, OTP login, and QR code sessions</p>
+        <p class="showcase-desc">
+          Senior capstone project (CS 46x) — a Flutter mobile app backed by a FastAPI REST API with MongoDB storage.
+          Led backend architecture for the Byte Squad team: JWT authentication, PyOTP two-factor auth, QR code login flows,
+          and coordinated cross-team Flutter integration.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2024 – 2025</span>
+          <a href="projects/personal-trainer-app.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3D Graphics Engine -->
+    <article class="showcase-card" data-categories="graphics">
+      <div class="showcase-visual graphics">
+        <span class="visual-icon">🌌</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag blue">Graphics</span>
+        </div>
+        <h3 class="showcase-title">3D Graphics Rendering Engine</h3>
+        <p class="showcase-tagline">OpenGL simulations with physically-based lighting, custom GLSL shaders, and keyframe animation</p>
+        <p class="showcase-desc">
+          Computer graphics coursework (CS 381) building an interactive Solar System simulation with texture mapping,
+          custom vertex and fragment shaders, camera controls, and real-time lighting models in C++ and OpenGL.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2024</span>
+          <a href="projects/graphics-engine.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Monte Carlo -->
+    <article class="showcase-card" data-categories="systems">
+      <div class="showcase-visual monte">
+        <span class="visual-icon">⚡</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag orange">Systems</span>
+        </div>
+        <h3 class="showcase-title">Parallel Monte Carlo Simulator</h3>
+        <p class="showcase-tagline">OpenMP-parallelized simulations with SIMD vectorization and Rust port comparisons</p>
+        <p class="showcase-desc">
+          High-performance Monte Carlo simulation using OpenMP for parallel execution. Benchmarked speedup curves across
+          thread counts, explored SIMD vectorization, and ported select algorithms to Rust for performance comparison.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2024</span>
+          <a href="projects/monte-carlo.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Database App -->
+    <article class="showcase-card" data-categories="web full-stack">
+      <div class="showcase-visual database">
+        <span class="visual-icon">🗄️</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag green">Web</span>
+          <span class="proj-tag purple">Full-Stack</span>
+        </div>
+        <h3 class="showcase-title">Database Management Web App</h3>
+        <p class="showcase-tagline">Relational database-backed web app with schema design, joins, and full CRUD interface</p>
+        <p class="showcase-desc">
+          Databases coursework (CS 340) — designed a normalized MySQL schema, wrote complex joins and stored procedures,
+          and built a PHP front-end with a complete CRUD interface for managing relational data.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2023</span>
+          <a href="projects/database-app.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Port Scanner -->
+    <article class="showcase-card" data-categories="systems">
+      <div class="showcase-visual scanner">
+        <span class="visual-icon">🔌</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag orange">Systems</span>
+        </div>
+        <h3 class="showcase-title">Concurrent Port Scanner</h3>
+        <p class="showcase-tagline">Multi-threaded C++ port scanner comparing thread-based vs. async I/O concurrency</p>
+        <p class="showcase-desc">
+          Built a multi-threaded port scanner in C++ using parallel socket connections. Compared thread-based and
+          async I/O concurrency models and measured throughput gains across different host ranges and port sets.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2024</span>
+          <a href="projects/port-scanner.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ROT13 -->
+    <article class="showcase-card" data-categories="systems web">
+      <div class="showcase-visual rot13">
+        <span class="visual-icon">🔐</span>
+      </div>
+      <div class="showcase-body">
+        <div class="showcase-tags">
+          <span class="proj-tag orange">Systems</span>
+          <span class="proj-tag green">Web</span>
+        </div>
+        <h3 class="showcase-title">ROT13 Cipher &amp; Protocol Tools</h3>
+        <p class="showcase-tagline">TDD-driven encoder/decoder with full Jest coverage and socket programming patterns</p>
+        <p class="showcase-desc">
+          Networking coursework (CS 372) — built a ROT13 encoder/decoder using test-driven development with full Jest
+          test coverage, plus exploration of client–server socket programming patterns.
+        </p>
+        <div class="showcase-footer">
+          <span class="showcase-date">2023</span>
+          <a href="projects/rot13-tools.html" class="case-study-link">
+            Read case study
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer>
+  <p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p>
+  <p class="footer-text" id="footer-year"></p>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+<script>
+  // Project filter tabs
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.showcase-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+        } else {
+          const cats = card.dataset.categories || '';
+          card.classList.toggle('hidden', !cats.includes(filter));
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

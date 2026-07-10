@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Graphics Rendering Engine — Case Study | Akshat Patel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+<div id="scroll-progress"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">AP.</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../resume.pdf" target="_blank" rel="noopener" class="nav-resume">Resume</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="case-study-page">
+  <a href="../projects.html" class="back-link"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to projects</a>
+  <div class="showcase-tags" style="margin-bottom:1.25rem;"><span class="proj-tag blue">Graphics</span></div>
+  <header class="case-hero">
+    <h1>3D Graphics Rendering Engine</h1>
+    <p class="lead">OpenGL-based 3D rendering projects including an interactive Solar System simulation with custom GLSL shaders, texture mapping, and keyframe animation.</p>
+  </header>
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>Understanding real-time 3D rendering requires building the pipeline from scratch — vertex processing, shader programs, lighting models, texture mapping, and animation — not just using a game engine.</p>
+  </section>
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>CS 381 coursework building progressively complex OpenGL scenes in C++. The capstone project is an interactive Solar System with orbiting planets, physically-based lighting, custom vertex/fragment shaders, texture-mapped surfaces, and camera controls.</p>
+  </section>
+  <section class="case-section">
+    <h2>Key Engineering</h2>
+    <ul>
+      <li>Custom GLSL vertex and fragment shaders for lighting and texturing</li>
+      <li>3D transformation matrices — model, view, and projection pipelines</li>
+      <li>Texture loading and UV mapping on sphere and mesh geometry</li>
+      <li>Keyframe animation with interpolated orbital motion</li>
+      <li>Interactive camera with keyboard/mouse input handling</li>
+    </ul>
+  </section>
+  <section class="case-section">
+    <h2>Tech Stack</h2>
+    <div class="case-stack">
+      <span class="stack-tag">C++</span><span class="stack-tag">OpenGL</span><span class="stack-tag">GLSL</span>
+      <span class="stack-tag">Shaders</span><span class="stack-tag">3D Math</span>
+    </div>
+  </section>
+</main>
+<footer><p class="footer-text">Designed &amp; built by <span>Akshat Patel</span></p><p class="footer-text" id="footer-year"></p></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
