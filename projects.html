@@ -268,8 +268,8 @@
         if (filter === 'all') {
           card.classList.remove('hidden');
         } else {
-          const cats = card.dataset.categories || '';
-          card.classList.toggle('hidden', !cats.includes(filter));
+          const categoryList = (card.dataset.categories || '').trim().split(/\s+/);
+          card.classList.toggle('hidden', !categoryList.includes(filter));
         }
       });
     });

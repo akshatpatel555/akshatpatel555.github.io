@@ -35,7 +35,9 @@ if (sections.length && links.length) {
     entries => entries.forEach(e => {
       if (e.isIntersecting) {
         links.forEach(l => l.classList.remove('active'));
-        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        const a = document.querySelector(
+          `.nav-links a[href="#${e.target.id}"], .nav-links a[data-section="${e.target.id}"]`
+        );
         if (a) a.classList.add('active');
       }
     }),
