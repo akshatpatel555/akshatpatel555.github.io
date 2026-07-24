@@ -55,11 +55,11 @@ document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 const typed = document.getElementById('typed-text');
 if (typed) {
   const phrases = [
-    'build things with software.',
-    'love parallel computing.',
-    'write clean, fast code.',
-    'explore computer graphics.',
-    'build full-stack apps.',
+    'build data pipelines.',
+    'ship AI-driven apps.',
+    'turn data into decisions.',
+    'design backend systems.',
+    'build full-stack products.',
   ];
   let pi = 0, ci = 0, deleting = false;
   function type() {
@@ -77,7 +77,7 @@ if (typed) {
 }
 
 function copyEmail() {
-  navigator.clipboard.writeText('akshatpatel555@gmail.com').then(() => {
+    navigator.clipboard.writeText('akshat.px08@gmail.com').then(() => {
     const btn = document.getElementById('copy-btn');
     if (!btn) return;
     btn.textContent = 'copied!';
@@ -88,3 +88,19 @@ function copyEmail() {
 
 const footerYear = document.getElementById('footer-year');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+document.querySelectorAll('.skills-toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.skills;
+    document.querySelectorAll('.skills-toggle-btn').forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    document.querySelectorAll('.skills-panel').forEach(panel => {
+      const on = panel.id === `skills-${target}`;
+      panel.classList.toggle('active', on);
+      if (on) panel.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    });
+  });
+});

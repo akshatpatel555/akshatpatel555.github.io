@@ -71,11 +71,12 @@
           <span class="proj-tag confidential">Confidential</span>
         </div>
         <h3 class="showcase-title">Stitching Client Manager</h3>
-        <p class="showcase-tagline">Tablet-first order management for a custom tailoring business — searchable customers, structured work orders, and payment tracking</p>
+        <p class="showcase-tagline">Tablet-first order management for a custom tailoring business — local-first SQLite, in daily production use</p>
         <p class="showcase-desc">
-          Built a Flutter app for my mom's stitching and alteration side business to replace her paper notebook.
-          Each customer can have multiple active orders with garment types, work tags, measurements, stylus handwriting,
-          photos, due dates, and per-order payment status — all stored locally in SQLite with reactive Drift queries.
+          Built a Flutter app end-to-end, replacing a paper-based order-tracking system. Architected a normalized,
+          local-first data model (customers, orders, measurements, handwriting capture) on Drift over SQLite with
+          reactive live-updating queries. Shipped and maintain v1.3 in daily production use, with unit tests covering
+          balance-due, overdue, and payment-status logic.
         </p>
         <div class="showcase-footer">
           <span class="showcase-date">Jul 2025 – Present</span>
@@ -87,7 +88,7 @@
       </div>
     </article>
 
-    <!-- Personal Trainer App -->
+    <!-- AI Fitness Tracker -->
     <article class="showcase-card" data-categories="full-stack mobile">
       <div class="showcase-visual trainer">
         <span class="visual-icon">💪</span>
@@ -96,16 +97,17 @@
         <div class="showcase-tags">
           <span class="proj-tag purple">Full-Stack</span>
           <span class="proj-tag green">Mobile</span>
+          <span class="proj-tag blue">AI</span>
         </div>
-        <h3 class="showcase-title">Personal Trainer App</h3>
-        <p class="showcase-tagline">Full-stack mobile fitness platform with JWT auth, OTP login, and QR code sessions</p>
+        <h3 class="showcase-title">AI-Powered Cross-Platform Fitness Tracker</h3>
+        <p class="showcase-tagline">Senior capstone — personalized workouts with OpenAI, JWT/OTP/QR auth, Flutter + FastAPI</p>
         <p class="showcase-desc">
-          Senior capstone project (CS 46x) — a Flutter mobile app backed by a FastAPI REST API with MongoDB storage.
-          Led backend architecture for the Byte Squad team: JWT authentication, PyOTP two-factor auth, QR code login flows,
-          and coordinated cross-team Flutter integration.
+          Led backend architecture for a cross-platform (iOS/Android) fitness app that builds, tracks, and recommends
+          personalized workouts — a FastAPI REST API backed by MongoDB with AI-driven workout generation via the OpenAI API.
+          Engineered multi-factor auth combining JWT, PyOTP, and QR-code session pairing on a 5-person Agile team.
         </p>
         <div class="showcase-footer">
-          <span class="showcase-date">2024 – 2025</span>
+          <span class="showcase-date">Senior Capstone</span>
           <a href="projects/personal-trainer-app.html" class="case-study-link">
             Read case study
             <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
