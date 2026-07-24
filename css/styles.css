@@ -236,10 +236,10 @@
       position: relative;
       z-index: 1;
       width: 340px;
-      height: 420px;
+      height: 400px;
       object-fit: cover;
-      object-position: center 20%;
-      border-radius: 18px;
+      object-position: center 40%;
+      border-radius: 10px;
       border: 1px solid var(--border2);
       display: block;
       box-shadow: 0 20px 48px rgba(0,0,0,0.45);
