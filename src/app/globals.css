@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-tinted: var(--accent-tinted);
+  --color-accent-solid: var(--accent-solid);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --muted: #f0f0f0;
+  --muted-foreground: #4b5563;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --border: #e5e7eb;
+  --primary: #0a0a0a;
+  --primary-foreground: #fafafa;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  /* For text sitting on an accent/10 tint. The plain accent measures 4.32:1
+     against that tint in light mode, just under WCAG AA's 4.5 for normal
+     text; this darker blue measures 5.55:1. */
+  --accent-tinted: #1d4ed8;
+  /* Background for filled accent surfaces carrying white text. Identical to
+     --accent here, so light mode is unchanged. */
+  --accent-solid: #2563eb;
+  --ring: #2563eb;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #1a1a1a;
+  --muted-foreground: #9ca3af;
+  --card: #111111;
+  --card-foreground: #ededed;
+  --border: #262626;
+  --primary: #ededed;
+  --primary-foreground: #0a0a0a;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  /* Dark mode already clears AA on the tint, so no separate value is needed. */
+  --accent-tinted: #3b82f6;
+  /* --accent is tuned for accent-coloured TEXT on the dark background (5.4:1)
+     and is too light to carry white text: white on #3b82f6 is only 3.68:1,
+     under WCAG AA. Filled CTAs use this deeper blue instead, at 5.2:1. */
+  --accent-solid: #2563eb;
+  --ring: #3b82f6;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/*
+ * Honour prefers-reduced-motion globally. The framer-motion wrappers opt out
+ * in JS (see motion-wrapper.tsx), but scroll-behavior, hover lifts and any
+ * CSS animation need the media query — and this also covers anything added
+ * later that forgets to ask.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* Focus ring utility */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 3px;
+}
+
+/* Glass effect utility */
+.glass {
+  background: color-mix(in srgb, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
